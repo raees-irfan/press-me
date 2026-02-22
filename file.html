@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>bauni 👀</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body id="body">
+
+  <h1>✨ hey bauni ✨</h1>
+  <p class="sub">something is waiting for you...</p>
+
+  <button id="btn" onclick="reveal()">CLICK ME</button>
+
+  <p id="message"></p>
+
+  <script>
+    const bgs = [
+      '#f953c6',
+      '#f7971e',
+      '#11998e',
+      '#4776e6',
+      '#f64f59',
+      '#00c6ff',
+    ];
+    let i = 0;
+
+    function reveal() {
+      document.getElementById('body').style.background = bgs[i % bgs.length];
+      i++;
+
+      const msg = document.getElementById('message');
+      msg.classList.remove('pop');
+      void msg.offsetWidth;
+      msg.textContent = '😂 zyada attention mil gaya kya bauni';
+      msg.classList.add('pop');
+
+      if (navigator.vibrate) navigator.vibrate([60, 30, 60]);
+    }
+  </script>
+</body>
+</html>
